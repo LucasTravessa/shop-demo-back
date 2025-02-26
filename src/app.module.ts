@@ -1,4 +1,9 @@
-import { Module, NestModule } from '@nestjs/common';
+import {
+  MiddlewareConsumer,
+  Module,
+  NestModule,
+  RequestMethod,
+} from '@nestjs/common';
 import { APP_GUARD, APP_PIPE } from '@nestjs/core';
 import { ZodValidationPipe } from 'nestjs-zod';
 import { AppController } from './app.controller';
@@ -10,6 +15,7 @@ import { PostModule } from './post/post.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { RefreshTokenModule } from './refresh-token/refresh-token.module';
 import { UserModule } from './user/user.module';
+import { LoggerMiddleware } from './_middlewares/logger.middleware';
 
 @Module({
   imports: [
@@ -34,8 +40,9 @@ import { UserModule } from './user/user.module';
   ],
 })
 export class AppModule implements NestModule {
-  configure(): void {
-    return;
+  configure(consumer: MiddlewareConsumer): void {
+    consumer
+      .apply(LoggerMiddleware)
+      .forRoutes({ path: '*', method: RequestMethod.ALL });
   }
-  // configure(consumer: MiddlewareConsumer): void {}
 }
