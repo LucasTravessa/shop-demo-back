@@ -29,6 +29,8 @@ model User {
 
   post          Post[]
   administrator Administrator?
+  orders        Order[]
+  cart          Cart[]
 }
 
 model Administrator {
@@ -83,6 +85,54 @@ model Post {
   updated DateTime @updatedAt
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Order {
+  id         Int         @id @default(autoincrement())
+  userId     Int
+  user       User        @relation(fields: [userId], references: [id])
+  status     OrderStatus @default(DRAFT)
+  totalPrice Float       @default(0)
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  cart       Cart[]
+}
+
+model Cart {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  User      User?    @relation(fields: [userId], references: [id])
+  productId Int
+  product   Product  @relation(fields: [productId], references: [id])
+  orderId   Int
+  order     Order    @relation(fields: [orderId], references: [id])
+  quantity  Int      @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  title       String   @db.VarChar(255)
+  description String?  @db.Text
+  picture     String?
+  price       Float
+  isDeleted   Boolean  @default(false)
+  quantity    Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  cart        Cart[]
+
+  @@unique([id, isDeleted])
+}
+
+enum OrderStatus {
+  DRAFT
+  PURCHASED
+  PAID
+  SENT
+  SHIPPED
+  DELETED
 }
 
 enum UserStatus {
