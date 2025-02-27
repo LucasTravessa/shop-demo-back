@@ -16,6 +16,8 @@ import { PrismaModule } from './prisma/prisma.module';
 import { RefreshTokenModule } from './refresh-token/refresh-token.module';
 import { UserModule } from './user/user.module';
 import { LoggerMiddleware } from './_middlewares/logger.middleware';
+import { ProductsModule } from './products/products.module';
+import { OrdersModule } from './orders/orders.module';
 
 @Module({
   imports: [
@@ -25,6 +27,8 @@ import { LoggerMiddleware } from './_middlewares/logger.middleware';
     PasswordModule,
     RefreshTokenModule,
     PostModule,
+    ProductsModule,
+    OrdersModule,
   ],
   controllers: [AppController],
   providers: [
