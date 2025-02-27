@@ -11,7 +11,6 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
 import { PasswordModule } from './password/password.module';
-import { PostModule } from './post/post.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { RefreshTokenModule } from './refresh-token/refresh-token.module';
 import { UserModule } from './user/user.module';
@@ -26,7 +25,6 @@ import { OrdersModule } from './orders/orders.module';
     AuthModule,
     PasswordModule,
     RefreshTokenModule,
-    PostModule,
     ProductsModule,
     OrdersModule,
   ],

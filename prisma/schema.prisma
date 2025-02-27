@@ -27,7 +27,6 @@ model User {
   created DateTime @default(now())
   updated DateTime @updatedAt
 
-  post          Post[]
   administrator Administrator?
   orders        Order[]
   cart          Cart[]
@@ -73,18 +72,6 @@ model RefreshToken {
 
   created DateTime @default(now()) @db.Timestamp(6)
   updated DateTime @updatedAt @db.Timestamp(6)
-}
-
-model Post {
-  id      Int    @id @default(autoincrement())
-  userId  Int
-  title   String
-  content String
-
-  created DateTime @default(now())
-  updated DateTime @updatedAt
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Order {
