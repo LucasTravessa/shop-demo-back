@@ -4,6 +4,7 @@ import { seedPosts } from './seedPosts';
 import seedPasswords from './seedPasswords';
 import { seedRoles } from './seedRoles';
 import { seedAdmins } from './seedAdmins';
+import { seedProducts } from './seedProducts';
 
 const prisma = new PrismaClient();
 
@@ -13,6 +14,7 @@ async function seed(): Promise<void> {
   await seedRoles(prisma);
   await seedAdmins(prisma);
   await seedPosts(prisma);
+  await seedProducts(prisma);
 }
 
 seed()
