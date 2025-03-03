@@ -1,34 +1,4 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
-
-# NestJS Starter Kit 🚀
-
-<div align="center">
-  <img src="https://github.com/mr-meselmani/nestjs-starter-kit/blob/master/public/words-github-banner.jpg?raw=true" alt="Project Banner" style="width:100%;"/>
-</div>
-
-</br>
-
-# Architecture
-
-<div align="center">
-  <img src="https://github.com/mr-meselmani/nestjs-starter-kit/blob/master/public/nestjs-starter-kit-architecture.jpg?raw=true" alt="Project Banner" style="width:100%;"/>
-</div>
-
-</br>
-
-> **_NOTE:_** Any folder which is not a NestJS module we prefix it with `_` this makes the view better in code editor & separate of concerns.
-
----
-
-## Welcome
-
-Welcome to the NestJS Starter Kit 🚀 This starter is opensource and provides a robust backend framework using NestJS with Prisma for database management, PostgreSQL as the database, Zod for schema validation, Resend email service, and TypeScript for type safety. Complete Authentication and Authorization are also included out of the box using PassportJS strategies JWT access & refresh tokens.
-
-> **_NOTE:_** Join the Innovators Lounge [Discord Server](https://discord.gg/Z8Yf4xj529) for free to get support and be an innovator member 😎
-
----
+<h1>My Shop Demo Back End</h1>
 
 ## Table of Contents
 
@@ -37,10 +7,6 @@ Welcome to the NestJS Starter Kit 🚀 This starter is opensource and provides a
 - [Installation](#installation)
 - [Usage](#usage)
 - [Docker Setup](#docker-setup)
-- [Contributing](#contributing)
-- [Sponsorship](#sponsorship) 🤍
-- [Current ERD](#current-erd)
-- [License](#license)
 
 ---
 
@@ -59,7 +25,7 @@ Welcome to the NestJS Starter Kit 🚀 This starter is opensource and provides a
 
 ## Getting Started
 
-This guide will walk you through how to set up, configure, and run the NestJS starter kit on your local machine OR skip this and go to Docker Setup to avoid installing tools.
+This guide will walk you through how to set up, configure, and run the NestJS app on your local machine OR skip this and go to Docker Setup to avoid installing tools.
 
 ### Prerequisites
 
@@ -73,16 +39,16 @@ Make sure you have the following installed:
 
 ## Installation
 
-To get started with this starter kit, follow these steps:
+To get started, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/mr-meselmani/nestjs-starter-kit.git
+   git clone https://github.com/LucasTravessa/shop-demo-back.git
    ```
 2. Navigate to the project directory:
 
    ```bash
-   cd nestjs-starter-kit
+   cd shop-demo-back
    ```
 
 3. Install dependencies:
@@ -126,13 +92,13 @@ To run the project using Docker, make sure Docker is installed and running on yo
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/mr-meselmani/nestjs-starter-kit.git
+   git clone https://github.com/LucasTravessa/shop-demo-back.git
    ```
 
 2. **Navigate to the Project Directory**:
 
    ```bash
-   cd nestjs-starter-kit
+   cd shop-demo-back
    ```
 
 3. **Set up Environment Variables**:
@@ -162,4 +128,4 @@ To run the project using Docker, make sure Docker is installed and running on yo
 
 ---
 
-Boilerplate from: https://github.com/mr-meselmani/nestjs-starter-kit.git
+> This Project is based on [nestjs starter kit](https://github.com/mr-meselmani/nestjs-starter-kit.git)
